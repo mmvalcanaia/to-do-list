@@ -1,19 +1,18 @@
 function State() {
-  this.list = null;
+  this.listContainer = null;
 }
 
 const state = new State();
 
 export function init() {
-  state.list = document.querySelector("#to-do-list");
-  console.log(state.list);
+  state.listContainer = document.querySelector("#to-do-list");
 }
 
 export function addNewTaskToScreen(task) {
   const newTask = createListItem(task);
   const list = addItemtoList(newTask);
 
-  state.list.appendChild(list);
+  state.listContainer.appendChild(list);
 }
 
 function createListItem(task) {
@@ -24,7 +23,6 @@ function createListItem(task) {
 }
 
 function addItemtoList(li) {
-  console.log(document.querySelectorAll("ul"));
   if (document.querySelectorAll("ul").length == 1) {
     const ul = document.querySelector("ul");
     ul.appendChild(li);

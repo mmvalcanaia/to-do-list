@@ -14,7 +14,6 @@ export function init(){
     state.inputTask = document.querySelector(".input-task");
     state.btnSave = document.querySelector(".btn-add-task");
 
-    state.inputTask.addEventListener("change", handleInputTaskChange);
     state.btnSave.addEventListener("click", handleBtnSaveClick);
 }
 
@@ -22,10 +21,6 @@ function handleBtnSaveClick(event){
     event.preventDefault();
     listController.addNewTaskToScreen(state.inputTask);
     clearInputTask();
-}
-
-function handleInputTaskChange(event){
-    console.log("digitou");
 }
 
 function clearInputTask(){
